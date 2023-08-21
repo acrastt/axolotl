@@ -30,7 +30,7 @@ output_dir: ./qlora-out
 batch_size: 4
 micro_batch_size: 4
 num_epochs: 2
-optimizer: paged_adamw_32bit
+optimizer: adamw_anyprecision
 torchdistx_path:
 lr_scheduler: cosine
 learning_rate: 0.0001
@@ -44,7 +44,7 @@ early_stopping_patience:
 resume_from_checkpoint:
 local_rank:
 logging_steps: 1
-xformers_attention: false
+xformers_attention: true
 flash_attention:
 gptq_groupsize:
 gptq_model_v1:
