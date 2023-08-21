@@ -30,7 +30,7 @@ output_dir: ./qlora-out
 batch_size: 4
 micro_batch_size: 4
 num_epochs: 2
-optimizer: adamw_anyprecision
+optimizer: adamw_bnb_8bit
 torchdistx_path:
 lr_scheduler: cosine
 learning_rate: 0.0001
