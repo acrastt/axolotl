@@ -7,7 +7,7 @@ load_in_4bit: true
 strict: false
 push_dataset_to_hub:
 datasets:
-  - path: LDJnr/Puffin
+  - path: totally-not-an-llm/EverythingLM-data-V2-sharegpt
     type: sharegpt:chat
 dataset_prepared_path: last_run_prepared
 val_set_size: 0.01
@@ -27,9 +27,9 @@ wandb_watch:
 wandb_run_id:
 wandb_log_model:
 output_dir: ./qlora-out
-batch_size: 4
-micro_batch_size: 4
-num_epochs: 1
+batch_size: 256
+micro_batch_size: 1
+num_epochs: 2
 optimizer: adamw_bnb_8bit
 torchdistx_path:
 lr_scheduler: cosine
@@ -44,16 +44,16 @@ early_stopping_patience:
 resume_from_checkpoint:
 local_rank:
 logging_steps: 10
-xformers_attention: true
+xformers_attention: false
 flash_attention:
 gptq_groupsize:
 gptq_model_v1:
-warmup_steps: 10
+warmup_steps: 50
 eval_steps: 10
-save_steps: 
+save_steps: 10
 debug:
 deepspeed:
-weight_decay: 0.0
+weight_decay: 0.01
 fsdp:
 fsdp_config:
 special_tokens:
