@@ -28,8 +28,8 @@ wandb_watch:
 wandb_run_id:
 wandb_log_model:
 output_dir: ./qlora-out
-batch_size: 32
-micro_batch_size: 16
+batch_size: 128
+micro_batch_size: 128
 num_epochs: 10
 optimizer: paged_adamw_8bit
 torchdistx_path:
